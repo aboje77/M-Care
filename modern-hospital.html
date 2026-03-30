@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern Hospital - Providing world-class healthcare services with compassion and expertise">
+    <title>Modern Hospital - Excellence in Healthcare</title>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="modern-hospital.css">
+</head>
+<body class="light-mode">
+    <!-- ==================== THEME TOGGLE ==================== -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="navbar-brand" onclick="scrollToSection('home')" style="cursor: pointer;">
+                    <i class="fas fa-hospital"></i>
+                    MedCare
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a class="nav-link" onclick="scrollToSection('services')">Services</a></li>
+                    <li><a class="nav-link" onclick="scrollToSection('doctors')">Doctors</a></li>
+                    <li><a class="nav-link" onclick="scrollToSection('gallery')">Gallery</a></li>
+                    <li><a class="nav-link" onclick="scrollToSection('testimonials')">Reviews</a></li>
+                    <li><a class="nav-link" onclick="scrollToSection('blog')">Blog</a></li>
+                    <li><a class="nav-link" onclick="scrollToSection('appointment')">Appointment</a></li>
+                    <li><a class="nav-link" onclick="scrollToSection('location')">Location</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-carousel-wrapper">
+            <div class="hero-carousel-track" id="heroCarousel">
+                <!-- Slide 1: Cardiac Care -->
+                <div class="hero-slide" data-slide="1">
+                    <div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Advanced Cardiac Care</h1>
+                        <p class="hero-slide-description">Experience cutting-edge cardiac services with our team of expert cardiologists using state-of-the-art technology and compassionate care.</p>
+                        <a href="#services" onclick="scrollToSection('services')" class="hero-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Expert Team -->
+                <div class="hero-slide" data-slide="2">
+                    <div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Expert Medical Team</h1>
+                        <p class="hero-slide-description">Our dedicated team of healthcare professionals is available 24/7 to provide exceptional medical care with focus on your well-being.</p>
+                        <a href="#appointment" onclick="scrollToSection('appointment')" class="hero-btn">Book Appointment <i class="fas fa-calendar-check"></i></a>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Diagnostic Facilities -->
+                <div class="hero-slide" data-slide="3">
+                    <div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Diagnostic Excellence</h1>
+                        <p class="hero-slide-description">Access state-of-the-art diagnostic facilities with advanced imaging and laboratory services for accurate diagnosis and treatment planning.</p>
+                        <a href="#services" onclick="scrollToSection('services')" class="hero-btn">View Services <i class="fas fa-stethoscope"></i></a>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Patient-Centric Care -->
+                <div class="hero-slide" data-slide="4"><div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Patient-Centric Approach</h1>
+                        <p class="hero-slide-description">We prioritize your comfort and recovery with personalized treatment plans designed specifically for your unique healthcare needs.</p>
+                        <a href="#appointment" onclick="scrollToSection('appointment')" class="hero-btn">Schedule Visit <i class="fas fa-calendar-check"></i></a>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Holistic Healthcare -->
+                <div class="hero-slide" data-slide="5"><div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Holistic Healthcare Services</h1>
+                        <p class="hero-slide-description">Comprehensive range of medical services addressing various aspects of your well-being through integrated and compassionate healthcare.</p>
+                        <a href="#services" onclick="scrollToSection('services')" class="hero-btn">Explore Services <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Dots -->
+            <div class="hero-dots" id="heroDots"></div>
+        </div>
+    </section>
+
+    <!-- ==================== HERO SECTION 2: SURGICAL & SPECIALISTS ==================== -->
+    <section class="hero hero-section-2" id="hero2" style="display: none;">
+        <div class="hero-carousel-wrapper">
+            <div class="hero-carousel-track" id="heroCarousel2">
+                <!-- Slide 1: Surgical Excellence -->
+                <div class="hero-slide" data-slide="1"><div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Surgical Excellence</h1>
+                        <p class="hero-slide-description">State-of-the-art surgical suites equipped with advanced technology and staffed by highly skilled surgeons ensuring safe and successful procedures.</p>
+                        <a href="#services" onclick="scrollToSection('services')" class="hero-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Orthopedic Specialists -->
+                <div class="hero-slide" data-slide="2"><div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Orthopedic Care</h1>
+                        <p class="hero-slide-description">Expert orthopedic specialists providing comprehensive treatment for bone, joint, and muscle conditions with cutting-edge surgical and non-surgical options.</p>
+                        <a href="#appointment" onclick="scrollToSection('appointment')" class="hero-btn">Book Consultation <i class="fas fa-calendar-check"></i></a>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Gynecology Services -->
+                <div class="hero-slide" data-slide="3"><div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Women's Health</h1>
+                        <p class="hero-slide-description">Specialized women's health services including obstetrics, gynecology, and maternal care provided by compassionate female specialists.</p>
+                        <a href="#services" onclick="scrollToSection('services')" class="hero-btn">View Services <i class="fas fa-stethoscope"></i></a>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Neurology Department -->
+                <div class="hero-slide" data-slide="4"><div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Neurology Services</h1>
+                        <p class="hero-slide-description">Advanced neurological diagnosis and treatment for brain, spine, and nervous system disorders with modern imaging and therapeutic technologies.</p>
+                        <a href="#appointment" onclick="scrollToSection('appointment')" class="hero-btn">Schedule Visit <i class="fas fa-calendar-check"></i></a>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Pediatric Care -->
+                <div class="hero-slide" data-slide="5"><div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Pediatric Excellence</h1>
+                        <p class="hero-slide-description">Specialized pediatric care with child-friendly facilities and expert pediatricians providing comprehensive healthcare for infants, children, and adolescents.</p>
+                        <a href="#services" onclick="scrollToSection('services')" class="hero-btn">Explore Services <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Dots -->
+            <div class="hero-dots" id="heroDots2"></div>
+        </div>
+    </section>
+
+    <!-- ==================== HERO SECTION 3: EMERGENCY & WELLNESS ==================== -->
+    <section class="hero hero-section-3" id="hero3" style="display: none;">
+        <div class="hero-carousel-wrapper">
+            <div class="hero-carousel-track" id="heroCarousel3">
+                <!-- Slide 1: Emergency Services -->
+                <div class="hero-slide" data-slide="1"><div class="hero-slide-content">
+                        <h1 class="hero-slide-title">24/7 Emergency Care</h1>
+                        <p class="hero-slide-description">Round-the-clock emergency department with fully equipped trauma centers and experienced medical professionals ready to handle any medical emergency.</p>
+                        <a href="#services" onclick="scrollToSection('services')" class="hero-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Wellness Programs -->
+                <div class="hero-slide" data-slide="2"><div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Wellness & Prevention</h1>
+                        <p class="hero-slide-description">Comprehensive wellness programs including preventive health screenings, fitness coaching, and lifestyle management for optimal health outcomes.</p>
+                        <a href="#appointment" onclick="scrollToSection('appointment')" class="hero-btn">Join Program <i class="fas fa-calendar-check"></i></a>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Mental Health -->
+                <div class="hero-slide" data-slide="3"><div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Mental Health Support</h1>
+                        <p class="hero-slide-description">Professional mental health services including counseling, therapy, and psychiatric care in a supportive and confidential environment.</p>
+                        <a href="#services" onclick="scrollToSection('services')" class="hero-btn">View Services <i class="fas fa-stethoscope"></i></a>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Rehabilitation Center -->
+                <div class="hero-slide" data-slide="4"><div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Rehabilitation Services</h1>
+                        <p class="hero-slide-description">State-of-the-art rehabilitation center providing physical therapy, occupational therapy, and recovery programs for maximum patient recovery.</p>
+                        <a href="#appointment" onclick="scrollToSection('appointment')" class="hero-btn">Schedule Session <i class="fas fa-calendar-check"></i></a>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Specialized Care -->
+                <div class="hero-slide" data-slide="5"><div class="hero-slide-content">
+                        <h1 class="hero-slide-title">Specialty Services</h1>
+                        <p class="hero-slide-description">Access to specialized medical services including oncology, endocrinology, rheumatology, and other specialized departments for complex medical conditions.</p>
+                        <a href="#services" onclick="scrollToSection('services')" class="hero-btn">Explore Services <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Dots -->
+            <div class="hero-dots" id="heroDots3"></div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive healthcare services tailored to your needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="service-title">Emergency Care</h3>
+                    <p class="service-description">24/7 emergency services with highly trained medical professionals and advanced equipment</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="service-title">Diagnostics</h3>
+                    <p class="service-description">State-of-the-art diagnostic facilities with latest imaging and laboratory technologies</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="service-title">Neurology</h3>
+                    <p class="service-description">Expert neurological care for brain and nervous system conditions</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3 class="service-title">Pulmonology</h3>
+                    <p class="service-description">Comprehensive respiratory care and treatment for lung diseases</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3 class="service-title">Dental Care</h3>
+                    <p class="service-description">Complete dental services from preventive care to advanced cosmetic dentistry</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 class="service-title">Pediatrics</h3>
+                    <p class="service-description">Specialized care for children with a focus on their unique health needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DOCTORS SECTION ==================== -->
+    <section class="doctors" id="doctors">
+        <div class="container">
+            <h2 class="section-title">Our Medical Team</h2>
+            <p class="section-subtitle">Expert healthcare professionals ready to serve you</p>
+            
+            <div class="carousel">
+                <div class="carousel-track" id="doctorsCarousel">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide">
+                        <div class="doctor-card" data-doctor="1">
+                            <div class="doctor-image"></div>
+                            <div class="doctor-info">
+                                <h3 class="doctor-name">Dr. Sarah Johnson</h3>
+                                <p class="doctor-specialty">Cardiologist</p>
+                            </div>
+                        </div>
+                        <div class="doctor-card" data-doctor="2">
+                            <div class="doctor-image"></div>
+                            <div class="doctor-info">
+                                <h3 class="doctor-name">Dr. Michael Chen</h3>
+                                <p class="doctor-specialty">Neurologist</p>
+                            </div>
+                        </div>
+                        <div class="doctor-card" data-doctor="3">
+                            <div class="doctor-image"></div>
+                            <div class="doctor-info">
+                                <h3 class="doctor-name">Dr. Emily Rodriguez</h3>
+                                <p class="doctor-specialty">Pediatrician</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <div class="doctor-card" data-doctor="4">
+                            <div class="doctor-image"></div>
+                            <div class="doctor-info">
+                                <h3 class="doctor-name">Dr. James Williams</h3>
+                                <p class="doctor-specialty">Radiologist</p>
+                            </div>
+                        </div>
+                        <div class="doctor-card" data-doctor="5">
+                            <div class="doctor-image"></div>
+                            <div class="doctor-info">
+                                <h3 class="doctor-name">Dr. Lisa Anderson</h3>
+                                <p class="doctor-specialty">General Surgeon</p>
+                            </div>
+                        </div>
+                        <div class="doctor-card" data-doctor="6">
+                            <div class="doctor-image"></div>
+                            <div class="doctor-info">
+                                <h3 class="doctor-name">Dr. David Martinez</h3>
+                                <p class="doctor-specialty">Gastroenterologist</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide">
+                        <div class="doctor-card" data-doctor="7">
+                            <div class="doctor-image"></div>
+                            <div class="doctor-info">
+                                <h3 class="doctor-name">Dr. Rachel Taylor</h3>
+                                <p class="doctor-specialty">Orthopedist</p>
+                            </div>
+                        </div>
+                        <div class="doctor-card" data-doctor="8">
+                            <div class="doctor-image"></div>
+                            <div class="doctor-info">
+                                <h3 class="doctor-name">Dr. Kevin Thompson</h3>
+                                <p class="doctor-specialty">Oncologist</p>
+                            </div>
+                        </div>
+                        <div class="doctor-card" data-doctor="9">
+                            <div class="doctor-image"></div>
+                            <div class="doctor-info">
+                                <h3 class="doctor-name">Dr. Jennifer Lee</h3>
+                                <p class="doctor-specialty">Ophthalmologist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <button class="carousel-btn" onclick="previousDoctor()" aria-label="Previous doctors">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-dots" id="doctorDots"></div>
+                <button class="carousel-btn" onclick="nextDoctor()" aria-label="Next doctors">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GALLERY SECTION ==================== -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Hospital Gallery</h2>
+            <p class="section-subtitle">State-of-the-art facilities and modern infrastructure</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-gallery="1">
+                    <div class="gallery-image"></div>
+                    <div class="gallery-overlay">
+                        <h3>Hospital Lobby</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-gallery="2">
+                    <div class="gallery-image"></div>
+                    <div class="gallery-overlay">
+                        <h3>Operating Room</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-gallery="3">
+                    <div class="gallery-image"></div>
+                    <div class="gallery-overlay">
+                        <h3>Laboratory</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-gallery="4">
+                    <div class="gallery-image"></div>
+                    <div class="gallery-overlay">
+                        <h3>Emergency Ward</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-gallery="5">
+                    <div class="gallery-image"></div>
+                    <div class="gallery-overlay">
+                        <h3>Patient Care</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-gallery="6">
+                    <div class="gallery-image"></div>
+                    <div class="gallery-overlay">
+                        <h3>Recovery Ward</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-gallery="7">
+                    <div class="gallery-image"></div>
+                    <div class="gallery-overlay">
+                        <h3>Diagnostic Unit</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-gallery="8">
+                    <div class="gallery-image"></div>
+                    <div class="gallery-overlay">
+                        <h3>Cardiac Center</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-gallery="9">
+                    <div class="gallery-image"></div>
+                    <div class="gallery-overlay">
+                        <h3>Rehabilitation</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-gallery="10">
+                    <div class="gallery-image"></div>
+                    <div class="gallery-overlay">
+                        <h3>Imaging Center</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-gallery="11">
+                    <div class="gallery-image"></div>
+                    <div class="gallery-overlay">
+                        <h3>Pharmacy</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-gallery="12">
+                    <div class="gallery-image"></div>
+                    <div class="gallery-overlay">
+                        <h3>Specialist Clinic</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS SECTION ==================== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Patient Reviews</h2>
+            <p class="section-subtitle">What our patients say about their experience</p>
+            
+            <div class="testimonial-carousel">
+                <div class="testimonial-track" id="testimonialsCarousel">
+                    <div class="testimonial-slide">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The medical team at MedCare is exceptional. They provided me with the best care and attention throughout my treatment. Highly recommended!"</p>
+                        <p class="testimonial-author">John Smith</p>
+                        <p class="testimonial-role">Patient</p>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Amazing experience! The doctors and nurses were so professional and caring. The facilities are top-notch. I feel fortunate to have been treated here."</p>
+                        <p class="testimonial-author">Maria Garcia</p>
+                        <p class="testimonial-role">Patient</p>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"MedCare exceeded all my expectations. From the moment I arrived, the staff made me feel comfortable and cared for. My recovery has been smooth thanks to their expertise."</p>
+                        <p class="testimonial-author">David Thompson</p>
+                        <p class="testimonial-role">Patient</p>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Outstanding medical care and compassionate staff. The hospital is clean, modern, and equipped with the latest technology. Truly a world-class healthcare facility!"</p>
+                        <p class="testimonial-author">Sarah Johnson</p>
+                        <p class="testimonial-role">Patient</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <button class="carousel-btn" onclick="previousTestimonial()" aria-label="Previous testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-dots" id="testimonialDots"></div>
+                <button class="carousel-btn" onclick="nextTestimonial()" aria-label="Next testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BLOG SECTION ==================== -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2 class="section-title">Latest Articles</h2>
+            <p class="section-subtitle">Stay informed with our health blog</p>
+            
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image"><i class="fas fa-heartbeat"></i></div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Tips for Better Heart Health</h3>
+                        <p class="blog-excerpt">Learn essential tips to maintain optimal heart health and prevent cardiovascular diseases through lifestyle changes.</p>
+                        <a href="#" class="blog-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image"><i class="fas fa-apple"></i></div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Nutrition Guide for Healthy Living</h3>
+                        <p class="blog-excerpt">Discover the importance of balanced nutrition and how proper diet can improve your overall health and wellness.</p>
+                        <a href="#" class="blog-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image"><i class="fas fa-brain"></i></div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Mental Health Awareness</h3>
+                        <p class="blog-excerpt">Understanding mental health is crucial. Learn about common conditions and available treatments to support your wellbeing.</p>
+                        <a href="#" class="blog-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image"><i class="fas fa-person-running"></i></div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Benefits of Regular Exercise</h3>
+                        <p class="blog-excerpt">Regular physical activity is essential for good health. Explore the incredible benefits of exercise for body and mind.</p>
+                        <a href="#" class="blog-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image"><i class="fas fa-moon"></i></div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Quality Sleep for Better Health</h3>
+                        <p class="blog-excerpt">Sleep is vital for health. Learn how to improve your sleep quality and establish healthy sleep habits.</p>
+                        <a href="#" class="blog-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image"><i class="fas fa-virus-covid"></i></div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Preventive Healthcare Guide</h3>
+                        <p class="blog-excerpt">Prevention is better than cure. Learn about important preventive measures and screening tests for all ages.</p>
+                        <a href="#" class="blog-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== APPOINTMENT SECTION ==================== -->
+    <section class="appointment" id="appointment">
+        <div class="container">
+            <h2 class="section-title">Book an Appointment</h2>
+            <p class="section-subtitle">Schedule your consultation with our medical professionals</p>
+            
+            <div class="form-container">
+                <form id="appointmentForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="Enter your full name" required>
+                        <div class="form-error" data-error="name"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                        <div class="form-error" data-error="email"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="Enter your phone number" required>
+                        <div class="form-error" data-error="phone"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="date">Preferred Date</label>
+                        <input type="date" id="date" class="form-input" required>
+                        <div class="form-error" data-error="date"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="department">Department</label>
+                        <select id="department" class="form-select" required>
+                            <option value="">Select a department</option>
+                            <option value="cardiology">Cardiology</option>
+                            <option value="neurology">Neurology</option>
+                            <option value="pediatrics">Pediatrics</option>
+                            <option value="orthopedics">Orthopedics</option>
+                            <option value="general">General Medicine</option>
+                            <option value="dentistry">Dentistry</option>
+                        </select>
+                        <div class="form-error" data-error="department"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message</label>
+                        <textarea id="message" class="form-textarea" placeholder="Tell us about your health concern..."></textarea>
+                        <div class="form-error" data-error="message"></div>
+                    </div>
+
+                    <button type="submit" class="form-submit">Book Appointment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LOCATION MAP SECTION ==================== -->
+    <section class="location-map" id="location">
+        <div class="container">
+            <h2 class="section-title">Our Location</h2>
+            <p class="section-subtitle">Visit us at our modern healthcare facility</p>
+            
+            <div class="map-wrapper">
+                <div class="map-container">
+                    <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1841769179264!2d-74.00601!3d40.71282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a390e50ee6f%3A0x129b25ca7aaa26b7!2s123%20Medical%20Ave%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1574352729816" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-hospital"></i> MedCare</h3>
+                    <p>Providing exceptional healthcare services with compassion, expertise, and modern technology. Your health is our priority.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#doctors">Our Doctors</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#appointment">Appointments</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>
+                            <a href="tel:+1234567890">
+                                <i class="fas fa-phone"></i> +1 (234) 567-890
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@medcare.com">
+                                <i class="fas fa-envelope"></i> info@medcare.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-map-marker-alt"></i> 123 Medical Ave, City, Country
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <ul>
+                        <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
+                        <li>Saturday: 10:00 AM - 4:00 PM</li>
+                        <li>Sunday: 10:00 AM - 2:00 PM</li>
+                        <li style="margin-top: 1rem; font-weight: 600;">Emergency: 24/7</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 MedCare Hospital. All rights reserved. | <a href="#" style="text-decoration: none; color: inherit;">Privacy Policy</a> | <a href="#" style="text-decoration: none; color: inherit;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCROLL TO TOP BUTTON ==================== -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ==================== EXTERNAL JAVASCRIPT ==================== -->
+    <script src="modern-hospital.js"></script>
+</body>
+</html>
