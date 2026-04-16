@@ -1,5 +1,6 @@
 // ==================== THEME TOGGLE ====================
 const themeToggle = document.getElementById('themeToggle');
+const themeToggleMobile = document.getElementById('themeToggleMobile');
 const htmlElement = document.documentElement;
 
 // Check for saved theme preference or default to 'light-mode'
@@ -7,7 +8,7 @@ const currentTheme = localStorage.getItem('theme') || 'light-mode';
 document.body.className = currentTheme;
 updateThemeIcon();
 
-themeToggle.addEventListener('click', () => {
+function toggleTheme() {
     const isDarkMode = document.body.classList.contains('dark-mode');
     document.body.classList.toggle('dark-mode');
     document.body.classList.toggle('light-mode');
@@ -15,12 +16,25 @@ themeToggle.addEventListener('click', () => {
     const newTheme = isDarkMode ? 'light-mode' : 'dark-mode';
     localStorage.setItem('theme', newTheme);
     updateThemeIcon();
-});
+}
+
+themeToggle.addEventListener('click', toggleTheme);
+themeToggleMobile.addEventListener('click', toggleTheme);
 
 function updateThemeIcon() {
-    const icon = themeToggle.querySelector('i');
     const isDarkMode = document.body.classList.contains('dark-mode');
-    icon.className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
+    const iconClass = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
+    const label = isDarkMode ? 'Light Mode' : 'Dark Mode';
+    
+    // Update desktop toggle icon
+    const desktopIcon = themeToggle.querySelector('i');
+    desktopIcon.className = iconClass;
+    
+    // Update mobile toggle icon and label
+    const mobileIcon = themeToggleMobile.querySelector('i');
+    const mobileLabel = themeToggleMobile.querySelector('.toggle-label');
+    mobileIcon.className = iconClass;
+    mobileLabel.textContent = label;
 }
 
 // ==================== NAVBAR STICKY SCROLL ====================
@@ -48,6 +62,12 @@ document.querySelectorAll('.nav-link').forEach(link => {
         navLinks.classList.remove('active');
         hamburger.style.transform = 'rotate(0deg)';
     });
+});
+
+// Close menu when theme toggle is clicked on mobile
+themeToggleMobile.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    hamburger.style.transform = 'rotate(0deg)';
 });
 
 // ==================== SCROLL TO SECTION ====================

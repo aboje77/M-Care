@@ -18,8 +18,8 @@
     <!-- <link rel="stylesheet" href="modern-hospital.css"> -->
 </head>
 <body class="light-mode">
-    <!-- ==================== THEME TOGGLE ==================== -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+    <!-- ==================== THEME TOGGLE (Desktop) ==================== -->
+    <button class="theme-toggle theme-toggle-desktop" id="themeToggle" aria-label="Toggle dark/light mode">
         <i class="fas fa-moon"></i>
     </button>
 
@@ -39,6 +39,13 @@
                     <li><a class="nav-link" onclick="scrollToSection('blog')">Blog</a></li>
                     <li><a class="nav-link" onclick="scrollToSection('appointment')">Appointment</a></li>
                     <li><a class="nav-link" onclick="scrollToSection('location')">Location</a></li>
+                    <li class="mobile-theme-divider"></li>
+                    <li class="mobile-theme-toggle-item">
+                        <button class="theme-toggle theme-toggle-mobile" id="themeToggleMobile" aria-label="Toggle dark/light mode">
+                            <i class="fas fa-moon"></i>
+                            <span class="toggle-label">Dark Mode</span>
+                        </button>
+                    </li>
                 </ul>
                 <div class="hamburger" id="hamburger">
                     <span></span>
