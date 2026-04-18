@@ -631,11 +631,43 @@ Image recommendations:
     bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
+    display: none;
     gap: 1rem;
     z-index: 10;
     justify-content: center;
     align-items: center;
+}
+
+.hero-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hero-nav-button:hover {
+    transform: translateY(-50%) scale(1.05);
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.hero-nav-prev {
+    left: 1.5rem;
+}
+
+.hero-nav-next {
+    right: 1.5rem;
 }
 
 .hero-dot {
@@ -1326,17 +1358,21 @@ Image recommendations:
 .testimonial-carousel {
     position: relative;
     max-width: 800px;
+    width: 100%;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .testimonial-track {
     display: flex;
+    width: 100%;
     transition: transform 0.5s ease;
     will-change: transform;
-    overflow: hidden;
 }
 
 .testimonial-slide {
+    min-width: 100%;
+    flex: 0 0 100%;
     flex: 0 0 100%;
     padding: 3rem 2rem;
     background: var(--card-bg);

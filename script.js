@@ -99,7 +99,7 @@ function initHeroCarouselDots(sectionNum, dotsId) {
     for (let i = 0; i < heroTotal; i++) {
         const dot = document.createElement('div');
         dot.className = `hero-dot ${i === 0 ? 'active' : ''}`;
-        dot.textContent = i + 1;
+        dot.textContent = '';
         dot.onclick = () => goToHeroSlide(sectionNum, i);
         dotsContainer.appendChild(dot);
     }
